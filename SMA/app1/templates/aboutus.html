@@ -1,0 +1,162 @@
+   <!DOCTYPE html>
+   {% load static %}
+   <html lang="en">
+
+   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <title>About us</title>
+    <link rel="stylesheet" href="{% static '/CSS/aboutus.css' %}" />
+   </head>
+
+<body>
+
+   <!-- ************************** Start of Header Part *************************** -->
+
+   <div class="header" id="top_header" >
+    <nav class="navbar navbar-expand-lg fixed-top">
+    </nav>
+
+    <section class="header-section">
+      <div class="center-div">
+        <h1 class="font-weight-bold">Welcome to Stock Market Analyzer</h1>
+        <p>Where Predictions Begin.</p>
+        
+        <div class="header-buttons">
+          <a class="nav-link" data-value="main-container" href="#">Services</a>
+          <a class="top-link" data-value="container" href="#">Contact us</a>
+          <a class="top-link" data-value="container" href="{% url 'index' %}">Back to Dashboard</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<!-- ************************** End of Header Part ************************* -->
+
+<!-- ***************************** Start of Three Extra divs **************************** -->
+
+<div class="main-container" id="main-container">
+
+    <div class="card purple border">
+        <h2>Card Heading Title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt optio laborum vitae eveniet suscipit repellat sit possimus iusto veritatis earum qui excepturi ullam provident quas, dolorum libero dolor cumque aperiam?</p>
+    </div>
+    <div class="card yellow border">
+        <h2>Card Heading Title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt optio laborum vitae eveniet suscipit repellat sit possimus iusto veritatis earum qui excepturi ullam provident quas, dolorum libero dolor cumque aperiam?</p>
+    </div>
+    <div class="card green border">
+        <h2>Card Heading Title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt optio laborum vitae eveniet suscipit repellat sit possimus iusto veritatis earum qui excepturi ullam provident quas, dolorum libero dolor cumque aperiam?</p>
+    </div>
+</div>
+
+<!-- **************************** End of Three Extra divs **************************** -->
+
+  <div class="container" id="container">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">Surkhet, NP12</div>
+          <div class="text-two">Birendranagar 06</div>
+        </div>
+
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">0900-78601</div>
+        </div>
+
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">SMA@gmail.com</div>
+        </div>
+
+      </div>
+
+      <div class="right-side">
+        <div class="topic-text">Send us a message</div>
+        <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+      
+        <form action="#">
+        <div class="input-box">
+          <input type="text" placeholder="Enter your name">
+        </div>
+
+        <div class="input-box">
+          <input type="text" placeholder="Enter your email">
+        </div>
+
+        <div class="input-box message-box">
+          <input type="text" placeholder="Enter your message">
+        </div>
+
+        <div class="button">
+          <input type="button" value="Send Now" >
+        </div>
+
+      </form>
+      
+    </div> 
+   </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{% static '/JS/aboutus.js' %}"></script>
+  
+</body>
+
+</html>
+
+<!--
+  <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+ <title>Login Page</title>
+ <link rel="stylesheet" href="{% static '/CSS/login.css' %}" />
+</head>
+
+<body>
+
+
+
+<div class="header" id="top_header" >
+  <nav class="navbar navbar-expand-lg fixed-top">
+  </nav>
+ 
+  <section class="header-section">
+    <div class="center-div">
+      <h1 class="font-weight-bold">Welcome to Stock Market Analyzer</h1>
+      <p>Where Predictions Begin. Let's see how everything works! Everything is going pretty good I guess!</p>
+      
+      <div class="header-buttons">
+        <a class="nav-link" data-value="main-container" href="#">Login</a>
+        <a class="top-link" data-value="container" href="#">Signup</a>
+        <a class="top-link" data-value="container" href="{% url 'index' %}">Go to Dashboard</a>
+      </div>
+    </div>
+  </section>
+ </div>
+ 
+ 
+ 
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="{% static '/JS/login.js' %}"></script>
+ 
+ </body>
+ 
+ </html>
+ 
+-->

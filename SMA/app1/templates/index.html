@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}Dashboard{% endblock  %}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link rel="stylesheet" href="{% static '/CSS/index.css' %}">
+    
+    </head>
+    
+    <body>
+
+        <!-- page preloader for loading -->
+        <!-- <div id="loading-area">
+            <div class="loader-col">
+                <div class="loader" id="loader"></div>
+            </div>
+        </div> -->
+        <!-- end loading -->
+    
+        <!-- slider -->
+        
+        <div class="dashboard-wrap">
+            <!-----:::::::::::::::::::::side bar left::::::::::::::::::::::::----->
+            <!-- side bar left -->
+            <div class="bodyClick"></div>
+            <div class="S-Sidebar-left">
+                <!-- logo and name -->
+                <div class="S-logo-wrap">
+                    <div class="S-logo">
+                        <a href="#">
+                            <img src="https://images.hdqwalls.com/download/hood-boy-skyscraper-neon-lights-4k-h4-320x240.jpg"
+                                alt="profileImg" />
+                            <a href="#">
+                                <h5>Stock Market Analyzer</h5>
+                                <h6>Welcome to the Website</h6>
+                            </a>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- primary menu -->
+                <div class="S-Nav-menu">
+                    <ul class="menu-links">
+                        <li class="menu-li">
+                            <h3>
+                                <a href="#"><i class="fa-solid fa-chart-simple"></i> </a>
+                                <a href="{% url 'main' %}">
+                                    <h4>Dashboard</h4>
+                                </a>
+                            </h3>
+                        </li>
+                        <li class="menu-li">
+                            <h3>
+                                <a href="#"><i class="fa-solid fa-user"></i></a>
+                                <a href="{% url 'profile' %}">
+                                    <h4>Profile</h4>
+                                </a>
+                            </h3>
+                        </li>
+                        <li class="menu-li">
+                            <h3>
+                                <a href="#"><i class="fa-solid fa-chart-column"></i> </a>
+                                <a href="{% url 'todays_market' %}">
+                                    <h4>Today's Market</h4>
+                                </a>
+                            </h3>
+                        </li>
+                        <li class="menu-li">
+                            <h3>
+                                <a href="#"><i class="fa-solid fa-database"></i></a>
+                                <a href="{% url 'stock_rates' %}">
+                                    <h4>Stock Rates</h4>
+                                </a>
+                            </h3>
+                        </li>
+                        <li class="menu-li">
+                            <h3>
+                                <a href="#"><i class="fa-solid fa-file-invoice"></i></a>
+                                <a href="{% url 'reports' %}">
+                                    <h4>Reports</h4>
+                                </a>
+                            </h3>
+                        </li>
+    
+                        <!-- expand down -->
+                        <li class="menu-li plus-sub" id="click-li">
+                            <div class="Sub-S-wrap">
+                                <h3>
+                                    <a href="#"><i class="fa-solid fa-gear"></i></a>
+                                    <a href="#">
+                                        <h4>Settings</h4>
+                                    </a>
+                                </h3>
+                                <span class="up-down-arrow" id="plus-sub">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </span>
+                            </div>
+                            <div class="S-sub-menu" id="S-sub-menu">
+                                <ul>
+                                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                                    <li><a href="{% url 'login' %}">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- <li class="menu-li">
+                            <h3>
+                                <a href="#"><i class="fa-solid fa-handshake"></i></a>
+                                <a href="#">
+                                    <h4>Get in Touch</h4>
+                                </a>
+                            </h3>
+                        </li> -->
+                        <li class="menu-li">
+                            <h3>
+                                <a href="#"><i class="fa-solid fa-circle-question"></i></a>
+                                <a href="{% url 'aboutus' %}">
+                                    <h4>About us</h4>
+                                </a>
+                            </h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-----::::::::::::::::::::: main content ::::::::::::::::::::::::----->
+                                    
+                                    <!-- main content -->
+            <section class="S-navbar-section">
+                <nav class="S-nav">
+                    <div class="S-nav-left">
+                        <div class="S-hambargur hambergurOne" id="hambergurOne">
+                            <i class="fa-solid fa-list"></i>
+                        </div>
+                    </div>
+                    <ul class="nav-icons secondary-ul" id="S_arrays">
+                        <li id="see_notif-Sm" class="see_notif-Sm" onclick="myfunFive()">
+                            <a><i class="fa-solid fa-bell"></i></a>
+                            <div class="notif-box">
+                                <div class="go-next">
+                                    <a href="#">See All
+                                        <span><i class="fa-solid fa-arrow-right pl-2"></i></span></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+    
+                    <!-- nav-middle -->
+                    <div class="S-search-box">
+                        <form action="search" class="search-box">
+                            <input type="search" class="s-search" id="search" placeholder="Search here..." />
+                            <button type="submit" class="S-search-btn">
+                                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
+    
+                    <!-- nav-right -->
+                    <div class="nav-right">
+                        <ul class="nav-icons main-ul" id="S_arrays">
+                            <li id="see_notif" class="see_notif" onclick="myfunOne()">
+                                <a><i class="fa-solid fa-bell"></i></a>
+                                <div class="notif-box">
+                                    <ul>
+                                        <li class="notif-li">
+                                            <div class="notif_img">
+                                                <a href="#"><img
+                                                        src="https://images.hdqwalls.com/download/hood-boy-skyscraper-neon-lights-4k-h4-320x240.jpg"
+                                                        alt="notif-img" /></a>
+                                            </div>
+                                            <div class="notif_mess">
+                                                <h3>
+                                                    <a href="#">Alex Sent You a Message</a>
+                                                </h3>
+                                                <h5>13 Sep 2022 - 10:14 PM</h5>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="go-next">
+                                        <a href="#">See All
+                                            <span><i class="fa-solid fa-arrow-right pl-2"></i></span></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="see_notif" class="see_notif" onclick="myfunFour()">
+                                <a><i class="fa-regular fa-newspaper"></i></a>
+                                <div class="notif-box">
+                                    <ul>
+                                        <li class="notif-li">
+                                            <div class="notif_img">
+                                                <a href="#"><img
+                                                        src="https://images.hdqwalls.com/download/hood-boy-skyscraper-neon-lights-4k-h4-320x240.jpg"
+                                                        alt="notif-img" /></a>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="notif-li">
+                                            <div class="notif_img">
+                                                <a href="#"><img
+                                                        src="https://images.hdqwalls.com/download/hood-boy-skyscraper-neon-lights-4k-h4-320x240.jpg"
+                                                        alt="notif-img" /></a>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="notif-li">
+                                            <div class="notif_img">
+                                                <a href="#"><img
+                                                        src="https://images.hdqwalls.com/download/hood-boy-skyscraper-neon-lights-4k-h4-320x240.jpg"
+                                                        alt="notif-img" /></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="go-next">
+                                        <a href="#">See All
+                                            <span><i class="fa-solid fa-arrow-right pl-2"></i></span></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <!-- S-right-prof -->
+                        <div class="S-right-prof">
+                            <a class="prof-cntnt-btn"><img
+                                    src="https://images.hdqwalls.com/download/hood-boy-skyscraper-neon-lights-4k-h4-320x240.jpg"
+                                    alt="profileImg" /></a>
+    
+                            <!-- click-content -->
+                            <div class="click-content" id="click-content-two">
+                                <div class="S-Click-img m-0 px-3">
+                                    <a href="#" class="S-btn d-flex align-items-center">
+                                        <img src="https://images.hdqwalls.com/download/hood-boy-skyscraper-neon-lights-4k-h4-320x240.jpg"
+                                            alt="profileImg" />
+                                    </a>
+                                    <div class="name-and-email">
+                                        <h4><a href="#">User Name</a></h4>
+                                        <h4><a href="#">username@host.com</a></h4>
+                                    </div>
+                                </div>
+                                <div class="S-person S-prof px-3">
+                                    <a href="{% url 'profile' %}" class="d-flex align-items-center py-3">
+                                        <span class="cntnt-icon">
+                                            <i class="fa-solid fa-user"></i>
+                                        </span>
+                                        <h5 class="pl-3">Profile</h5>
+                                    </a>
+                                </div>
+                                <div class="S-person S-prev px-3">
+                                    <a href="{% url 'login' %}" class="d-flex align-items-center py-3">
+                                        <span class="cntnt-icon"><i
+                                                class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i></span>
+                                        <h5 class="pl-3">Logout</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+        </div>
+
+        <script src="/SMA/static/JS/index.js"></script>
+        <script src="/SMA/static/JS/index.js"></script>
+    
+      <script>
+      
+    
+/*===============nav bar==============*/
+    
+    // sub menu
+    const liClick = document.getElementById("click-li");
+    liClick.addEventListener("click", function () {
+        const li = document.getElementById("plus-sub");
+        const subMenu = document.getElementById("S-sub-menu");
+        li.classList.toggle("add-menu");
+        subMenu.classList.toggle("subMenutoggle");
+    });
+    
+    // hamburger
+    const hamburgerOne = document.getElementById("hambergurOne");
+    const sidebar = document.querySelector(".S-Sidebar-left");
+    const navfull = document.querySelector("section.S-navbar-section");
+    const audio = new Audio("./sound/click.wav");
+    
+    const scrn = window.innerWidth;
+    var bodyClick = document.querySelector(".bodyClick");
+    
+    hamburgerOne.addEventListener("click", function () {
+        hamburgerOne.classList.toggle("active_hamburgerOne");
+        sidebar.classList.toggle("sm-sidebar");
+        navfull.classList.toggle("nav-full");
+        audio.play();
+        bodyClick.classList.toggle("bClick_hide");
+        notif[0].classList.remove("notif_toggle");
+        notif[1].classList.remove("notif_toggle");
+        notif[2].classList.remove("notif_toggle");
+        notif[3].classList.remove("notif_toggle");
+        notif_sm[0].classList.remove("notif_toggle");
+        notif_sm[1].classList.remove("notif_toggle");
+        notif_sm[2].classList.remove("notif_toggle");
+        notif_sm[3].classList.remove("notif_toggle");
+        toggleDiv.classList.remove("toggle");
+    });
+    
+    //bodyClick
+    bodyClick.addEventListener("click", function () {
+        notif[0].classList.remove("notif_toggle");
+        notif[1].classList.remove("notif_toggle");
+        notif[2].classList.remove("notif_toggle");
+        notif[3].classList.remove("notif_toggle");
+        notif_sm[0].classList.remove("notif_toggle");
+        notif_sm[1].classList.remove("notif_toggle");
+        notif_sm[2].classList.remove("notif_toggle");
+        notif_sm[3].classList.remove("notif_toggle");
+        toggleDiv.classList.remove("toggle");
+        if (bodyClick.classList.contains("bClick_hide")) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+        sidebar.classList.remove("sm-sidebar");
+        if (bodyClick.classList.contains("bClick_hide")) {
+            bodyClick.classList.remove("bClick_hide");
+        }
+        if (hamburgerOne.classList.contains("active_hamburgerOne")) {
+            hamburgerOne.classList.remove("active_hamburgerOne");
+        }
+        navfull.classList.remove("nav-full");
+    });
+    
+    // profile-click
+    var profClick = document.querySelector(".prof-cntnt-btn");
+    const toggleDiv = document.getElementById("click-content-two");
+    profClick.addEventListener("click", function () {
+        toggleDiv.classList.toggle("toggle");
+        audio.play();
+        notif[0].classList.remove("notif_toggle");
+        notif[1].classList.remove("notif_toggle");
+        notif[2].classList.remove("notif_toggle");
+        notif[3].classList.remove("notif_toggle");
+        notif_sm[0].classList.remove("notif_toggle");
+        notif_sm[1].classList.remove("notif_toggle");
+        notif_sm[2].classList.remove("notif_toggle");
+        notif_sm[3].classList.remove("notif_toggle");
+    });
+    
+    // notification click content
+    const notif = document.querySelectorAll(".see_notif");
+    for (let i = 0; i < notif.length; i++) {
+        var notifSm = notif[i];
+    
+        function myfunOne() {
+            notif[0].classList.toggle("notif_toggle");
+            notif[1].classList.remove("notif_toggle");
+            notif[2].classList.remove("notif_toggle");
+            notif[3].classList.remove("notif_toggle");
+            toggleDiv.classList.remove("toggle");
+        }
+        function myfunFour() {
+            notif[0].classList.remove("notif_toggle");
+            notif[1].classList.remove("notif_toggle");
+            notif[2].classList.remove("notif_toggle");
+            notif[3].classList.toggle("notif_toggle");
+            toggleDiv.classList.remove("toggle");
+        }
+    }
+    const notif_sm = document.querySelectorAll(".see_notif-Sm");
+    for (let i = 0; i < notif_sm.length; i++) {
+        function myfunFive() {
+            notif_sm[0].classList.remove("notif_toggle");
+            notif_sm[1].classList.remove("notif_toggle");
+            notif_sm[2].classList.toggle("notif_toggle");
+            notif_sm[3].classList.remove("notif_toggle");
+            toggleDiv.classList.remove("toggle");
+        }
+    }
+
+
+        </script>
+    </body>
+</html>
